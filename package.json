@@ -1,0 +1,18 @@
+{
+  "name": "rincolabs-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Rincolabs static site — build tooling for the prod branch.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "serve": "esbuild --servedir=dist --serve=3000",
+    "dev": "esbuild --servedir=./ --serve=3000",
+    "deploy": "bash scripts/deploy.sh"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.12",
+    "html-minifier-terser": "^7.2.0",
+    "lightningcss": "^1.28.2"
+  }
+}
