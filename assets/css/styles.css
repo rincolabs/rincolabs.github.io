@@ -731,6 +731,69 @@ h3 {
   margin-top: 2.2rem;
 }
 
+.download-note-row {
+  margin-top: 1rem;
+}
+
+.note-card {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  padding: clamp(1rem, 2.4vw, 1.25rem) clamp(1.1rem, 3vw, 1.5rem);
+  border: 1px solid rgba(106, 162, 255, 0.32);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(76, 141, 255, 0.1), transparent 60%),
+    rgba(36, 41, 49, 0.78);
+}
+
+.note-card-icon {
+  display: flex;
+  flex: 0 0 auto;
+  width: 1.6rem;
+  height: 1.6rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(106, 162, 255, 0.16);
+  color: var(--accent-hover);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.note-card p {
+  flex: 1 1 auto;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: clamp(0.95rem, 1.8vw, 1.02rem);
+  line-height: 1.55;
+}
+
+.note-card-action {
+  flex: 0 0 auto;
+  align-self: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .note-card {
+    flex-wrap: wrap;
+  }
+
+  .note-card-action {
+    align-self: flex-start;
+  }
+}
+
+.note-card strong {
+  color: var(--text-primary);
+}
+
+.note-card-inline {
+  margin: 1.6rem 0;
+}
+
 .platform-card {
   display: flex;
   min-height: 280px;

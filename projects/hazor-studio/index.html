@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hazor Studio — Open Source Linux Image Editor | Rincolabs</title>
+    <title>Hazor Studio — Linux-first Open Source Image Editor</title>
     <meta
       name="description"
       content="Hazor Studio is an open source raster image editor for Linux in active development, built around layers, brushes, selections, and experimental AI-assisted tools."
@@ -179,8 +179,8 @@
             <span>Open Source</span>
             <span>Linux</span>
             <span>Windows</span>
-            <span>AI Assisted</span>
-            <span>Layer Based</span>
+            <span>AI-assisted</span>
+            <span>Layer-based</span>
           </div>
           <br />
           <p class="product-lede">
@@ -197,9 +197,9 @@
             <a
               class="button button-primary button-download js-os-download-button"
               href="https://github.com/rincolabs/hazor-studio/releases/download/v0.0.1-beta/HazorStudio-linux-x86_64-v0.0.1-beta.zip"
-              data-linux-label="Try beta for Linux"
+              data-linux-label="Download for Linux"
               data-linux-href="https://github.com/rincolabs/hazor-studio/releases/download/v0.0.1-beta/HazorStudio-linux-x86_64-v0.0.1-beta.zip"
-              data-windows-label="Try beta for Windows"
+              data-windows-label="Download for Windows"
               data-windows-href="https://github.com/rincolabs/hazor-studio/releases/download/v0.0.1-beta/HazorStudio-Windows-x64-v0.0.1-beta.zip"
               data-macos-label="Try beta"
               data-macos-href="https://github.com/rincolabs/hazor-studio/releases/download/v0.0.1-beta/HazorStudio-linux-x86_64-v0.0.1-beta.zip"
@@ -262,7 +262,7 @@
               editing feedback.
             </p>
             <div class="platform-meta" aria-label="Linux build details">
-              <span>v0.2 Beta</span>
+              <span>v0.0.1-beta</span>
               <span>Linux x86_64</span>
               <span>OpenGL accelerated</span>
             </div>
@@ -276,7 +276,7 @@
                 href="https://github.com/rincolabs/hazor-studio/releases/download/v0.0.1-beta/HazorStudio-linux-x86_64-v0.0.1-beta.zip"
               >
                 <span aria-hidden="true">↓</span>
-                Try beta for Linux
+                Download for Linux
               </a>
               <!-- <a
                 class="button button-secondary"
@@ -306,7 +306,7 @@
               desktop experience continues to improve.
             </p>
             <div class="platform-meta" aria-label="Windows build details">
-              <span>v0.2 Beta</span>
+              <span>v0.0.1-beta</span>
               <span>Windows 10/11 64-bit</span>
               <span>OpenGL accelerated</span>
             </div>
@@ -320,7 +320,7 @@
                 href="https://github.com/rincolabs/hazor-studio/releases/download/v0.0.1-beta/HazorStudio-Windows-x64-v0.0.1-beta.zip"
               >
                 <span aria-hidden="true">↓</span>
-                Try beta for Windows
+                Download for Windows
               </a>
             </div>
           </article>
@@ -343,6 +343,25 @@
             </p>
             <span class="button button-disabled">Planned</span>
           </article>
+        </div>
+
+        <div class="download-note-row">
+          <div class="note-card" role="note">
+            <span class="note-card-icon" aria-hidden="true">!</span>
+            <p>
+              <strong>Beta notes:</strong> Hazor Studio is still under active
+              development. Some tools may be incomplete, unstable, or behave
+              differently across platforms.
+            </p>
+            <a
+              class="button button-secondary note-card-action"
+              href="https://github.com/rincolabs/hazor-studio/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Report issue
+            </a>
+          </div>
         </div>
       </section>
 
@@ -453,14 +472,14 @@
         <div
           class="media-carousel"
           data-carousel
-          aria-label="AI Select Tool preview images"
+          aria-label="Brush Engine preview images"
         >
           <div class="media-carousel-viewport">
             <div class="media-carousel-track">
               <figure class="media-carousel-slide">
                 <img
                   src="/assets/images/hazor-studio-brush-engine-preview.webp"
-                  alt="Hazor Studio AI background removal preview"
+                  alt="Hazor Studio brush engine preview 1"
                   width="1877"
                   height="1053"
                   loading="lazy"
@@ -470,7 +489,7 @@
               <figure class="media-carousel-slide">
                 <img
                   src="/assets/images/hazor-studio-brush-engine-preview-02.webp"
-                  alt="Hazor Studio AI subject selection preview"
+                  alt="Hazor Studio brush engine preview 2"
                   width="1877"
                   height="1053"
                   loading="lazy"
@@ -481,7 +500,7 @@
           </div>
           <div
             class="media-carousel-controls"
-            aria-label="AI Select Tool carousel controls"
+            aria-label="Brush Engine carousel controls"
           >
             <button
               class="media-carousel-button"
@@ -495,12 +514,12 @@
               <button
                 type="button"
                 data-carousel-dot
-                aria-label="Show subject selection preview"
+                aria-label="Show brush engine preview 1"
               ></button>
               <button
                 type="button"
                 data-carousel-dot
-                aria-label="Show background removal preview"
+                aria-label="Show brush engine preview 2"
               ></button>
             </div>
             <button
@@ -531,6 +550,14 @@
             models such as SAM for segmentation and BiRefNet for refinement,
             aiming to speed up common cutout and selection tasks without
             promising perfect results.
+          </p>
+        </div>
+        <div class="note-card note-card-inline" role="note">
+          <span class="note-card-icon" aria-hidden="true">!</span>
+          <p>
+            AI selection runs the SAM and BiRefNet models through ONNX Runtime,
+            using GPU acceleration when available and automatically falling back
+            to CPU. Results are usable on CPU, but expect slower processing.
           </p>
         </div>
         <div
@@ -618,17 +645,25 @@
             drivers, and environment compatibility.
           </p>
         </div>
+        <div class="note-card note-card-inline" role="note">
+          <span class="note-card-icon" aria-hidden="true">!</span>
+          <p>
+            Real-ESRGAN upscaling requires Vulkan-capable graphics drivers, so
+            availability depends on your GPU and driver support. Without a
+            working Vulkan setup, upscaling may be unavailable.
+          </p>
+        </div>
         <div
           class="media-carousel"
           data-carousel
-          aria-label="AI Select Tool preview images"
+          aria-label="Upscaling preview images"
         >
           <div class="media-carousel-viewport">
             <div class="media-carousel-track">
               <figure class="media-carousel-slide">
                 <img
                   src="/assets/images/hazor-studio-upscaling-preview.webp"
-                  alt="Hazor Studio AI subject selection preview"
+                  alt="Hazor Studio upscaling preview 1"
                   width="1877"
                   height="1053"
                   loading="lazy"
@@ -638,7 +673,7 @@
               <figure class="media-carousel-slide">
                 <img
                   src="/assets/images/hazor-studio-upscaling-preview-02.webp"
-                  alt="Hazor Studio AI background removal preview"
+                  alt="Hazor Studio upscaling preview 2"
                   width="1877"
                   height="1053"
                   loading="lazy"
@@ -649,7 +684,7 @@
           </div>
           <div
             class="media-carousel-controls"
-            aria-label="AI Select Tool carousel controls"
+            aria-label="Upscaling carousel controls"
           >
             <button
               class="media-carousel-button"
@@ -663,12 +698,12 @@
               <button
                 type="button"
                 data-carousel-dot
-                aria-label="Show subject selection preview"
+                aria-label="Show upscaling preview 1"
               ></button>
               <button
                 type="button"
                 data-carousel-dot
-                aria-label="Show background removal preview"
+                aria-label="Show upscaling preview 2"
               ></button>
             </div>
             <button
@@ -704,14 +739,14 @@
         <div
           class="media-carousel"
           data-carousel
-          aria-label="AI Select Tool preview images"
+          aria-label="AI Generative Fill preview images"
         >
           <div class="media-carousel-viewport">
             <div class="media-carousel-track">
               <figure class="media-carousel-slide">
                 <img
                   src="/assets/images/hazor-studio-generative-fill-preview.webp"
-                  alt="Hazor Studio AI subject selection preview"
+                  alt="Hazor Studio AI generative fill preview 1"
                   width="1877"
                   height="1053"
                   loading="lazy"
@@ -721,7 +756,7 @@
               <figure class="media-carousel-slide">
                 <img
                   src="/assets/images/hazor-studio-generative-fill-preview-02.webp"
-                  alt="Hazor Studio AI background removal preview"
+                  alt="Hazor Studio AI generative fill preview 2"
                   width="1877"
                   height="1053"
                   loading="lazy"
@@ -732,7 +767,7 @@
           </div>
           <div
             class="media-carousel-controls"
-            aria-label="AI Select Tool carousel controls"
+            aria-label="AI Generative Fill carousel controls"
           >
             <button
               class="media-carousel-button"
@@ -746,12 +781,12 @@
               <button
                 type="button"
                 data-carousel-dot
-                aria-label="Show subject selection preview"
+                aria-label="Show generative fill preview 1"
               ></button>
               <button
                 type="button"
                 data-carousel-dot
-                aria-label="Show background removal preview"
+                aria-label="Show generative fill preview 2"
               ></button>
             </div>
             <button
@@ -792,14 +827,14 @@
         <div
           class="media-carousel"
           data-carousel
-          aria-label="AI Select Tool preview images"
+          aria-label="AI Workflow preview images"
         >
           <div class="media-carousel-viewport">
             <div class="media-carousel-track">
               <figure class="media-carousel-slide">
                 <img
                   src="/assets/images/hazor-studio-ai-workflow-preview.webp"
-                  alt="Hazor Studio AI subject selection preview"
+                  alt="Hazor Studio AI workflow preview 1"
                   width="1041"
                   height="612"
                   loading="lazy"
@@ -809,7 +844,7 @@
               <figure class="media-carousel-slide">
                 <img
                   src="/assets/images/hazor-studio-ai-workflow-preview-02.webp"
-                  alt="Hazor Studio AI background removal preview"
+                  alt="Hazor Studio AI workflow preview 2"
                   width="1041"
                   height="586"
                   loading="lazy"
@@ -820,7 +855,7 @@
           </div>
           <div
             class="media-carousel-controls"
-            aria-label="AI Select Tool carousel controls"
+            aria-label="AI Workflow carousel controls"
           >
             <button
               class="media-carousel-button"
@@ -834,12 +869,12 @@
               <button
                 type="button"
                 data-carousel-dot
-                aria-label="Show subject selection preview"
+                aria-label="Show AI workflow preview 1"
               ></button>
               <button
                 type="button"
                 data-carousel-dot
-                aria-label="Show background removal preview"
+                aria-label="Show AI workflow preview 2"
               ></button>
             </div>
             <button
